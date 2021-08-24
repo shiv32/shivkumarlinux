@@ -1,0 +1,116 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+/* The body formatting */
+
+body {
+	background: #231F20 url(images/background.jpg) no-repeat fixed left bottom;
+	font: 62.5%/100% "Lucida Sans Unicode", "Lucida Console", Verdana, sans-serif;
+	color: #FFFFFF;
+}
+
+
+/* Links */
+
+a {
+	color: #FFFFFF;
+	text-decoration: underline;
+}
+a:hover {
+	color: #EC008D;
+}
+a:visited {
+	color: #A69FA2;
+}
+a img {
+	border: 2px solid #FFFFFF;
+}
+a:hover img {
+	border: 2px solid #EC008D;
+}
+a:visited img {
+	border: 2px solid #3C3839;
+}
+
+/* Headings */
+
+h1, h2, h3, h4, h5, h6 {
+	font: "Lucida Sans Unicode", "Lucida Console", Verdana, sans-serif;
+}
+h1 {
+	color: #FFFFFF;
+	font-size: 2.4em;
+	line-height: 3em;
+}
+
+span {
+	color: #ED008C;
+}
+
+/* Paragraphs and text formatting */
+
+
+
+
+/* The layout */
+
+html > .navbar {
+	background: #971857 url() no-repeat 97% center;
+}
+.navbar {
+	background: #A01F62 url() no-repeat 97% center;
+	width: 90%;
+	margin: 0 0 2em;
+	padding: 0 5%;
+	line-height: 5em;
+	height: 5em;
+	color: #FFFFFF;
+}
+.navbar ul li {
+	display: inline;
+}
+.navbar ul li a, .navbar ul li a:visited {
+	background: #971857;
+	color: #FFFFFF;
+	padding: 1em 3em;
+	display: block;
+	float: left;
+	height: 3em;
+	text-decoration: none;
+}
+.navbar ul li a:hover {
+	background: #ED008C;
+	color: #FFFFFF;
+}
+ .wrapper {
+	float: center;
+	margin: 0 0 0 32em;
+	clear: both;
+	padding: 1.4em;
+	font-size: 1.1em;
+} 
+.footer {
+	margin-top: 5em;
+	line-height: 2.4em;
+	background: #971857;
+	padding: 0.35em 1em;
+}
+.footer a {
+	padding: 0.8em 0.3em;
+	text-decoration: none;
+	font-weight: bold;
+}
+.footer a:hover {
+	background: #ED008C;
+	color: #FFFFFF;
+}
+.wrapper .options {
+	background: #231F20 url() no-repeat 0.6em center;
+	height: 4.2em;
+	line-height: 4.2em;
+	border: 1px solid #971F5F;
+	padding-left: 4em;
+	margin: 1em 0;
+}
