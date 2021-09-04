@@ -45,6 +45,11 @@ h1 {
 	line-height: 3em;
 }
 
+ul li{
+	font-size:13px;
+   }
+   
+
 span {
 	color: #ED008C;
 }
@@ -64,8 +69,8 @@ html > .navbar {
 	width: 90%;
 	margin: 0 0 2em;
 	padding: 0 5%;
-	line-height: 5em;
-	height: 5em;
+	line-height: 7em;
+	height: 7em;
 	color: #FFFFFF;
 }
 .navbar ul li {
