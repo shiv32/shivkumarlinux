@@ -4,6 +4,9 @@
 <title>Shiv Kumar</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <link href="style.css" rel="stylesheet" type="text/css" media="screen, print" />
+	
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="js/logic.js"></script>
 
 </head>
 <body>
@@ -26,33 +29,4 @@
  </div>
 </body>
  <div id="footer"><p id="mip"></p><br><p id="mdatetime"></p></div>
-  <!-- for IP Address -->
- <script src=
-"https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
- </script>
- <script type="text/javascript" >
-    //for browser name
-  var browserName = (function (agent) {        switch (true) {
-            case agent.indexOf("edge") > -1: return "MS Edge";
-            case agent.indexOf("edg/") > -1: return "Edge ( chromium based)";
-            case agent.indexOf("opr") > -1 && !!window.opr: return "Opera";
-            case agent.indexOf("chrome") > -1 && !!window.chrome: return "Chrome";
-            case agent.indexOf("trident") > -1: return "MS IE";
-            case agent.indexOf("firefox") > -1: return "Mozilla Firefox";
-            case agent.indexOf("safari") > -1: return "Safari";
-            default: return "other";
-        }
-    })(window.navigator.userAgent.toLowerCase());
-    
-    //for IP Address
-    	$.getJSON("https://api.ipify.org?format=json", function(data) {
-		$("#mip").html("Browser : "+ browserName+", Your IP : "+data.ip);
-	})
-	 
-  setInterval(myTimer, 1000);
-  
-  function myTimer() {
-  document.getElementById('mdatetime').innerHTML = Date()
-}
-</script>
 </html>
