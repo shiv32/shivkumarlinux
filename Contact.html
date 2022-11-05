@@ -48,6 +48,10 @@
     	$.getJSON("https://api.ipify.org?format=json", function(data) {
 		$("#mip").html("Browser : "+ browserName+", Your IP : "+data.ip);
 	})
+  setInterval(myTimer, 1000);
+  
+  function myTimer() {
   document.getElementById('mdatetime').innerHTML = Date()
+}
 </script>
 </html>
