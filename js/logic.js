@@ -14,8 +14,6 @@
     
     //for IP Address
     	$.getJSON("https://api.ipify.org?format=json", function(data) {
-		
-		// Setting text of element P with id gfg
 		$("#mip").html("Browser : "+ browserName+", Your IP : "+data.ip);
 	})
 
