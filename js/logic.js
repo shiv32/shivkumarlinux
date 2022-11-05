@@ -14,7 +14,8 @@
     
     //for IP Address
     	$.getJSON("https://api.ipify.org?format=json", function(data) {
-		$("#mip").html("Browser : "+ browserName+", Your IP : "+data.ip);
+		//$("#mip").html("Browser : "+ browserName+", Your IP : "+data.ip);
+		$("#mip").html("Browser : "+ window.navigator.userAgent+", Your IP : "+data.ip);
 	})
 
   function myTimer() {
