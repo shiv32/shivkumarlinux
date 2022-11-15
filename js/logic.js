@@ -21,7 +21,7 @@
   function myTimer() {
   //document.getElementById('mdatetime').innerHTML = Date()
    if(navigator.onLine){
-       document.getElementById('mdatetime').innerHTML = Date()+"; Internate Status: online"   	  
+             document.getElementById('mdatetime').innerHTML = Date()+"; Internate Status: online"   	  
     } else {
     	     document.getElementById('mdatetime').innerHTML = Date()+"; Internate Status: offline"
     }
