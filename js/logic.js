@@ -29,3 +29,29 @@
 
 setInterval(myTimer, 1000);
 
+//========================= IP Data=====================================
+const http = new XMLHttpRequest()
+
+http.open("GET", "http://ip-api.com/json")
+http.send()
+
+http.onload = function() {  
+  const obj = JSON.parse(http.responseText);
+ //console.log(obj)
+document.getElementById('country').innerHTML = "Country : "+obj.country
+document.getElementById('regionName').innerHTML = "RegionName  : "+obj.regionName
+document.getElementById('city').innerHTML = "City : "+obj.city
+document.getElementById('zip').innerHTML = "Zip : "+obj.zip
+document.getElementById('lat').innerHTML = "Lat : "+obj.lat
+document.getElementById('lon').innerHTML = "Lon : "+obj.lon
+document.getElementById('query').innerHTML = "IP : "+obj.query
+document.getElementById('isp').innerHTML = "Isp : "+obj.isp
+document.getElementById('org').innerHTML = "Org : "+obj.org
+document.getElementById('as').innerHTML = "As : "+obj.as
+}
+//==============================================================
+
+
+
+
+
