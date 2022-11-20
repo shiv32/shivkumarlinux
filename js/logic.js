@@ -30,7 +30,7 @@
 setInterval(myTimer, 1000);
 
 //========================= IP Data=====================================
-const http = new XMLHttpRequest()
+/*const http = new XMLHttpRequest()
 
 http.open("GET", "http://ip-api.com/json")
 http.send()
@@ -48,7 +48,7 @@ document.getElementById('query').innerHTML = "IP : "+obj.query
 document.getElementById('isp').innerHTML = "Isp : "+obj.isp
 document.getElementById('org').innerHTML = "Org : "+obj.org
 document.getElementById('as').innerHTML = "As : "+obj.as
-}
+}*/
 //==============================================================
 
 
