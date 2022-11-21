@@ -54,7 +54,7 @@ document.getElementById('as').innerHTML = "As : "+obj.as
 	$.getJSON("http://ip-api.com/json", function(obj) {
 		
 		console.log(obj)
-		
+		/*
 document.getElementById('country').innerHTML = "Country : "+obj.country
 document.getElementById('regionName').innerHTML = "RegionName  : "+obj.regionName
 document.getElementById('city').innerHTML = "City : "+obj.city
@@ -65,6 +65,7 @@ document.getElementById('query').innerHTML = "IP : "+obj.query
 document.getElementById('isp').innerHTML = "Isp : "+obj.isp
 document.getElementById('org').innerHTML = "Org : "+obj.org
 document.getElementById('as').innerHTML = "As : "+obj.as
+*/
 	})
 //==============================================================
 
