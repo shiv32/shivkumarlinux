@@ -68,6 +68,16 @@ document.getElementById('isp').innerHTML = "Isp : "+obj.isp
 document.getElementById('org').innerHTML = "Org : "+obj.org
 document.getElementById('as').innerHTML = "As : "+obj.as
 */
+	
+document.getElementById('country').innerHTML = "Country : "+obj.country_name
+document.getElementById('regionName').innerHTML = "RegionName  : "+obj.region
+document.getElementById('city').innerHTML = "City : "+obj.city
+document.getElementById('zip').innerHTML = "Zip : "+obj.postal
+document.getElementById('lat').innerHTML = "Lat : "+obj.latitude
+document.getElementById('lon').innerHTML = "Lon : "+obj.longitude
+document.getElementById('query').innerHTML = "IP : "+obj.ip
+document.getElementById('org').innerHTML = "Org : "+obj.org
+	
 	})
 //==============================================================
 
