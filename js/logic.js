@@ -51,7 +51,9 @@ document.getElementById('as').innerHTML = "As : "+obj.as
 }*/
 
 
-	$.getJSON("//ip-api.com/json", function(obj) {
+	//$.getJSON("//ip-api.com/json", function(obj) {
+
+$.getJSON("https://ipapi.co/json/", function(obj) {
 		
 		console.log(obj)
 		/*
