@@ -52,6 +52,9 @@ document.getElementById('as').innerHTML = "As : "+obj.as
 
 
 	$.getJSON("http://ip-api.com/json", function(obj) {
+		
+		console.log(obj)
+		
 document.getElementById('country').innerHTML = "Country : "+obj.country
 document.getElementById('regionName').innerHTML = "RegionName  : "+obj.regionName
 document.getElementById('city').innerHTML = "City : "+obj.city
