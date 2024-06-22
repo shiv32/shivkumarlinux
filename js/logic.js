@@ -16,6 +16,9 @@
     	$.getJSON("https://api.ipify.org?format=json", function(data) {
 		//$("#mip").html("Browser : "+ browserName+", Your IP : "+data.ip);
 		$("#mip").html("Browser : "+ window.navigator.userAgent+", Your IP : "+data.ip);
+    $.get("header.html", function (data) {
+      $("#navigation").replaceWith(data);
+    });
 	})
 
   function myTimer() {
@@ -82,6 +85,16 @@ document.getElementById('org').innerHTML = "Org : "+obj.org
 //==============================================================
 
 
+$(function () {
 
-
-
+  var bar = '';
+  bar += '<li><a href="index.html">Home</a></li>';
+  bar += '<li><a href="About.html">About</a></li>';
+  bar += '<li><a href="Contact.html">Contact</a></li>';
+  bar += '<li><a href="https://www.youtube.com/@ShivMLinux" target="_blank">YouTube</a></li>';
+  bar += '<li><a href="https://github.com/shiv32" target="_blank">GitHub</a></li>  ';
+  bar += '<li><a href="https://www.qt.io/" target="_blank">Qt</a></li>';
+  bar += '<li><a href="https://en.cppreference.com/w/" target="_blank">Cppreference</a></li>';
+  bar += '<li><a href="http://www.google.com" target="_blank"><span  style="font-size:20px; color:#FFFFFF">G</span></a></li>';
+  $("#mnav").html(bar);
+});
