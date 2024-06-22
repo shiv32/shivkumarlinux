@@ -86,7 +86,6 @@ document.getElementById('org').innerHTML = "Org : "+obj.org
 
 
 $(function () {
-
   var bar = '';
   bar += '<li><a href="index.html">Home</a></li>';
   bar += '<li><a href="About.html">About</a></li>';
