@@ -94,6 +94,6 @@ $(function () {
   bar += '<li><a href="https://github.com/shiv32" target="_blank">GitHub</a></li>  ';
   bar += '<li><a href="https://www.qt.io/" target="_blank">Qt</a></li>';
   bar += '<li><a href="https://en.cppreference.com/w/" target="_blank">Cppreference</a></li>';
-  bar += '<li><a href="http://www.google.com" target="_blank"><img class="google"></a></li>';
+  bar += '<li><a href="https://www.google.com" target="_blank"><img class="google"></a></li>';
   $("#mnav").html(bar);
 });
