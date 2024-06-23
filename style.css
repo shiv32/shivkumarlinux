@@ -23,7 +23,8 @@ a:hover {
 a:visited {
 	color: #A69FA2;
 }
-a img {
+
+/* a img {
 	border: 2px solid #FFFFFF;
 }
 a:hover img {
@@ -31,7 +32,7 @@ a:hover img {
 }
 a:visited img {
 	border: 2px solid #3C3839;
-}
+} */
 
 #footer {
   position: absolute;
@@ -126,4 +127,16 @@ html > .navbar {
 	border: 1px solid #971F5F;
 	padding-left: 4em;
 	margin: 1em 0;
+}
+
+/* img {
+	content: url("images/G.jpg");
+	width: 200px;
+	height: 200px;
+} */
+
+.google{
+	content: url("images/G.jpg");
+	width: 40px;
+	height: 40px;
 }
