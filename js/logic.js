@@ -86,14 +86,15 @@ document.getElementById('org').innerHTML = "Org : "+obj.org
 
 
 $(function () {
+
   var bar = '';
-  bar += '<li><a href="index.html">Home</a></li>';
-  bar += '<li><a href="About.html">About</a></li>';
-  bar += '<li><a href="Contact.html">Contact</a></li>';
-  bar += '<li><a href="https://www.youtube.com/@ShivMLinux" target="_blank">YouTube</a></li>';
-  bar += '<li><a href="https://github.com/shiv32" target="_blank">GitHub</a></li>  ';
-  bar += '<li><a href="https://www.qt.io/" target="_blank">Qt</a></li>';
-  bar += '<li><a href="https://en.cppreference.com/w/" target="_blank">Cppreference</a></li>';
+  bar += '<li><a href="index.html"><img class="home"></a></li>';
+  bar += '<li><a href="About.html"><img class="about"></a></li>';
+  bar += '<li><a href="Contact.html"><img class="contact"></a></li>';
+  bar += '<li><a href="https://www.youtube.com/@ShivMLinux" target="_blank"><img class="youtube"></a></li>';
+  bar += '<li><a href="https://github.com/shiv32" target="_blank"><img class="github"></a></li>  ';
+  bar += '<li><a href="https://www.qt.io/" target="_blank"><img class="qt"></a></li>';
+  bar += '<li><a href="https://en.cppreference.com/w/" target="_blank"><img class="cpp"></a></a></li>';
   bar += '<li><a href="https://www.google.com" target="_blank"><img class="google"></a></li>';
   $("#mnav").html(bar);
 });

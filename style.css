@@ -137,6 +137,49 @@ html > .navbar {
 
 .google{
 	content: url("images/G.jpg");
-	width: 40px;
-	height: 40px;
+	width: 50px;
+	height: 50px;
+}
+
+
+.cpp{
+	content: url("images/cpp.jpg");
+	width: 50px;
+	height: 50px;
+}
+
+.qt{
+	content: url("images/qt.jpg");
+	width: 50px;
+	height: 50px;
+}
+
+.github{
+	content: url("images/github.jpg");
+	width: 50px;
+	height: 50px;
+}
+
+.youtube{
+	content: url("images/youtube.jpg");
+	width: 50px;
+	height: 50px;
+}
+
+.contact{
+	content: url("images/contact.jpg");
+	width: 50px;
+	height: 50px;
+}
+
+.about{
+	content: url("images/about.jpg");
+	width: 50px;
+	height: 50px;
+}
+
+.home{
+	content: url("images/home.jpg");
+	width: 50px;
+	height: 50px;
 }
