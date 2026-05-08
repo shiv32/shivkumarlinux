@@ -136,6 +136,10 @@ span {
   margin: 0.75rem 0;
 }
 
+.ip-block p {
+  margin: 0.35rem 0;
+}
+
 #ipdata {
   font-size: 1.4rem;
   color: #ff4b4b;
