@@ -146,6 +146,33 @@ span {
   margin-bottom: 1rem;
 }
 
+.hidden {
+  display: none !important;
+}
+
+.ip-fixed {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+  z-index: 10;
+}
+
+.ip-fixed #ipdata {
+  margin: 0;
+  display: inline-block;
+  padding: 0.75rem 1.25rem;
+  background: rgba(35, 31, 32, 0.94);
+  border: 1px solid #ff4b4b;
+  border-radius: 0.5rem;
+  font-size: 1.4rem;
+  color: #ffffff;
+}
+
+
 .wrapper .options {
   background: #231F20;
   border: 1px solid #971F5F;
