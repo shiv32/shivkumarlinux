@@ -84,17 +84,35 @@ document.getElementById('org').innerHTML = "Org : "+obj.org
 	})
 //==============================================================
 
+//image based menu
+// $(function () {
+//   var bar = '';
+//   bar += '<li><a href="index.html"><img class="home"></a></li>';
+//   bar += '<li><a href="About.html"><img class="about"></a></li>';
+//   bar += '<li><a href="Contact.html"><img class="contact"></a></li>';
+//   bar += '<li><a href="https://www.youtube.com/@CppCraft" target="_blank"><img class="youtube"></a></li>';
+//   bar += '<li><a href="https://github.com/shiv32" target="_blank"><img class="github"></a></li>  ';
+//   bar += '<li><a href="https://www.qt.io/" target="_blank"><img class="qt"></a></li>';
+//   bar += '<li><a href="https://en.cppreference.com/w/" target="_blank"><img class="cpp"></a></a></li>';
+//   bar += '<li><a href="https://www.google.com" target="_blank"><img class="google"></a></li>';
+//   $("#mnav").html(bar);
+// });
 
+//text based menu
 $(function () {
-
   var bar = '';
-  bar += '<li><a href="index.html"><img class="home"></a></li>';
-  bar += '<li><a href="About.html"><img class="about"></a></li>';
-  bar += '<li><a href="Contact.html"><img class="contact"></a></li>';
-  bar += '<li><a href="https://www.youtube.com/@CppCraft" target="_blank"><img class="youtube"></a></li>';
-  bar += '<li><a href="https://github.com/shiv32" target="_blank"><img class="github"></a></li>  ';
-  bar += '<li><a href="https://www.qt.io/" target="_blank"><img class="qt"></a></li>';
-  bar += '<li><a href="https://en.cppreference.com/w/" target="_blank"><img class="cpp"></a></a></li>';
-  bar += '<li><a href="https://www.google.com" target="_blank"><img class="google"></a></li>';
+  bar += '<li><a href="index.html"><span  class="menu-link"><b>Home</b></span></a></li>';
+  bar += '<li><a href="About.html"><span  class="menu-link"><b>About</b></span></a></li>';
+  bar += '<li><a href="Contact.html"><span  class="menu-link"><b>Contact</b></span></a></li>';
+  bar += '<li><a href="https://www.youtube.com/@CppCraft" target="_blank"><span  class="menu-link"><b>YouTube</b></span></a></li>';
+  bar += '<li><a href="https://github.com/shiv32" target="_blank"><span  class="menu-link"><b>GitHub</b></span></a></li>  ';
+  //bar += '<li><a href="https://www.qt.io/" target="_blank"><span  class="menu-link"><b>Qt</b></span></a></li>';
+  bar += '<li><a href="https://en.cppreference.com/w/" target="_blank"><span  class="menu-link"><b>C++</b></span></a></li>';
+  bar += '<li><a href="https://www.google.com" target="_blank"><span  class="menu-link"><b>Google</b></span></a></li>';
   $("#mnav").html(bar);
 });
+
+
+
+
+
