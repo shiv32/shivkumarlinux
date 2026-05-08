@@ -25,6 +25,16 @@ a {
   text-decoration: underline;
 }
 
+.wrapper a,
+.wrapper a:visited {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.wrapper a:hover {
+  color: #f23d30;
+}
+
 a:hover {
   color: #EC008D;
 }
