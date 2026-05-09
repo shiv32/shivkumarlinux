@@ -37,19 +37,16 @@
     </section>
 
     <section class="ip-data">
-      <h2>Your IP Data</h2>
+      <h2>Your Location</h2>
       <p id="query"></p>
-      <p id="country"></p>
-      <p id="regionName"></p>
       <p id="city"></p>
-      <p id="zip"></p>
+      <p id="country"></p>
       <p id="lat"></p>
       <p id="lon"></p>
       <p id="org"></p>
+      <p id="region"></p>
       <p id="timezone"></p>
-      <p id="currency"></p>
-      <p id="country_code"></p>
-    </section> 
+    </section>
   </main>
 
   <footer class="footer">
@@ -111,15 +108,19 @@
           // Show all geolocation information
           updateElement('query', 'IP: ' + (data.ip || 'N/A'));
           updateElement('country', 'Country: ' + (data.country || 'N/A'));
-          updateElement('regionName', 'Continent: ' + (data.continent_code || 'N/A'));
-          updateElement('city', 'Area Code: ' + (data.area_code || 'N/A'));
-          updateElement('zip', 'ASN: ' + (data.asn || 'N/A'));
+          updateElement('region', 'Region: ' + (data.region || 'N/A'));
+          updateElement('city', 'City: ' + (data.city || 'N/A'));
           updateElement('lat', 'Latitude: ' + (data.latitude || 'N/A'));
           updateElement('lon', 'Longitude: ' + (data.longitude || 'N/A'));
-          updateElement('org', 'Organization: ' + (data.organization_name || 'N/A'));
           updateElement('timezone', 'Timezone: ' + (data.timezone || 'N/A'));
-          updateElement('currency', 'Country Code: ' + (data.country_code || 'N/A'));
-          updateElement('country_code', 'Accuracy: ' + (data.accuracy || 'N/A') + 'm');
+          updateElement('org', 'Organization: ' + (data.organization_name || 'N/A'));
+          updateElement('country_code', 'Country Code: ' + (data.country_code || 'N/A'));
+          updateElement('continent', 'Continent: ' + (data.continent_code || 'N/A'));
+          updateElement('country_code3', 'Country Code 3: ' + (data.country_code3 || 'N/A'));
+          updateElement('asn', 'ASN: ' + (data.asn || 'N/A'));
+          updateElement('area_code', 'Area Code: ' + (data.area_code || 'N/A'));
+          updateElement('accuracy', 'Accuracy: ' + (data.accuracy || 'N/A') + 'm');
+          updateElement('organization_full', 'Full Organization: ' + (data.organization || 'N/A'));
         })
         .catch(error => console.log('Location fetch error:', error));
 
