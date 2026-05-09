@@ -1,23 +1,112 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title>Shiv Kumar</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link href="style.css" rel="stylesheet" type="text/css" media="screen, print" />
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script type="text/javascript" src="js/logic.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - Shiv Kumar</title>
+  <link href="style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-<div class="navbar">
-  <ul id="mnav"></ul>
-</div>
-<div class="wrapper">
-    <h1>Hi..This is Shiv Kumar.. I am a Software Engineer. I have completed my M.Tech. from NIT Hamirpur(HP) (<a href="https://nith.ac.in/" target="_blank">https://nith.ac.in/</a>)</h1>
- </div>
- <div class="ip-fixed">
-    <p id="ipdata" class="hidden"><b>Your IP Data</b></p>
- </div>
-  <div id="footer"><p id="mip"></p><br><p id="mdatetime"></p></div>
+  <nav class="navbar">
+    <div class="nav-container">
+      <button class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-menu" id="mnav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="About.html">About</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+        <li><a href="https://www.youtube.com/@CppCraft" target="_blank">YouTube</a></li>
+        <li><a href="https://github.com/shiv32" target="_blank">GitHub</a></li>
+        <li><a href="https://en.cppreference.com/w/" target="_blank">C++</a></li>
+        <li><a href="https://www.google.com/" target="_blank">Google</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container">
+    <section class="hero">
+      <h1>About Me</h1>
+    </section>
+
+    <section class="content">
+      <h2>Education</h2>
+      <p>I completed my M.Tech. from <a href="https://nith.ac.in/" target="_blank">NIT Hamirpur</a>, a prestigious institution in Himachal Pradesh, India.</p>
+
+      <h2>Professional Background</h2>
+      <p>I am a dedicated Software Engineer with a passion for building robust and scalable applications. My expertise spans full-stack development, system design, and software architecture.</p>
+
+      <h2>Skills & Interests</h2>
+      <ul>
+        <li>Full-stack web development</li>
+        <li>Software architecture and design</li>
+        <li>System programming</li>
+        <li>Open source contributions</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p id="mip"></p>
+    <p id="mdatetime"></p>
+  </footer>
+
+  <script src="js/logic.js"></script>
+  <script>
+    // Inline initialization for hamburger menu and footer data
+    window.addEventListener('load', function() {
+      const hamburger = document.getElementById('hamburger');
+      const navMenu = document.getElementById('mnav');
+
+      if (hamburger && navMenu) {
+        hamburger.addEventListener('click', function (e) {
+          e.stopPropagation();
+          hamburger.classList.toggle('active');
+          navMenu.classList.toggle('active');
+        });
+
+        const navLinks = navMenu.querySelectorAll('a');
+        navLinks.forEach(link => {
+          link.addEventListener('click', function () {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+          });
+        });
+
+        document.addEventListener('click', function (event) {
+          if (!hamburger.contains(event.target) && !navMenu.contains(event.target)) {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+          }
+        });
+      }
+
+      // Fetch and display IP info
+      fetch('https://api.ipify.org?format=json')
+        .then(response => response.json())
+        .then(data => {
+          const mipEl = document.getElementById('mip');
+          if (mipEl) {
+            mipEl.textContent = 'Browser: ' + window.navigator.userAgent + ' | IP: ' + data.ip;
+          }
+        })
+        .catch(error => console.log('IP fetch error:', error));
+
+      // Update date and time
+      function updateDateTime() {
+        const dateTimeElement = document.getElementById('mdatetime');
+        if (dateTimeElement) {
+          const now = new Date();
+          const status = navigator.onLine ? 'Connected' : 'Disconnected';
+          dateTimeElement.textContent = now.toString() + ' | Internet Status: ' + status;
+        }
+      }
+      
+      updateDateTime();
+      setInterval(updateDateTime, 1000);
+    });
+  </script>
 </body>
 </html>

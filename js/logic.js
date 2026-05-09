@@ -1,55 +1,91 @@
+// ===== INITIALIZE WHEN DOM IS READY =====
+function initializePage() {
+  // ===== HAMBURGER MENU =====
+  const hamburger = document.getElementById('hamburger');
+  const navMenu = document.getElementById('mnav');
 
-    //for browser name
-  var browserName = (function (agent) {        switch (true) {
-            case agent.indexOf("edge") > -1: return "MS Edge";
-            case agent.indexOf("edg/") > -1: return "Edge ( chromium based)";
-            case agent.indexOf("opr") > -1 && !!window.opr: return "Opera";
-            case agent.indexOf("chrome") > -1 && !!window.chrome: return "Chrome";
-            case agent.indexOf("trident") > -1: return "MS IE";
-            case agent.indexOf("firefox") > -1: return "Mozilla Firefox";
-            case agent.indexOf("safari") > -1: return "Safari";
-            default: return "other";
-        }
-    })(window.navigator.userAgent.toLowerCase());
-    
-    //for IP Address
-    	$.getJSON("https://api.ipify.org?format=json", function(data) {
-		//$("#mip").html("Browser : "+ browserName+", Your IP : "+data.ip);
-		$("#mip").html("Browser : "+ window.navigator.userAgent+", Your IP : "+data.ip);
-    $.get("header.html", function (data) {
-      $("#navigation").replaceWith(data);
+  if (hamburger && navMenu) {
+    hamburger.addEventListener('click', function () {
+      hamburger.classList.toggle('active');
+      navMenu.classList.toggle('active');
     });
-	})
 
-  function myTimer() {
-  //document.getElementById('mdatetime').innerHTML = Date()
-   if(navigator.onLine){
-             document.getElementById('mdatetime').innerHTML = Date()+", Internate Status : Connected"   	  
-    } else {
-    	     document.getElementById('mdatetime').innerHTML = Date()+", Internate Status : Disconnected"
+    // Close menu when a link is clicked
+    const navLinks = navMenu.querySelectorAll('a');
+    navLinks.forEach(link => {
+      link.addEventListener('click', function () {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+      });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function (event) {
+      if (!hamburger.contains(event.target) && !navMenu.contains(event.target)) {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+      }
+    });
+  }
+
+  // ===== IP ADDRESS & BROWSER INFO =====
+  fetch('https://api.ipify.org?format=json')
+    .then(response => response.json())
+    .then(data => {
+      const ipElement = document.getElementById('mip');
+      if (ipElement) {
+        ipElement.textContent = 'Browser: ' + window.navigator.userAgent + ' | IP: ' + data.ip;
+      }
+    })
+    .catch(error => console.log('IP fetch error:', error));
+
+  // ===== DETAILED IP DATA (Country, City, etc.) =====
+  fetch('http://ip-api.com/json')
+    .then(response => response.json())
+    .then(data => {
+      if (data.status === 'success') {
+        const countryEl = document.getElementById('country');
+        const regionEl = document.getElementById('regionName');
+        const cityEl = document.getElementById('city');
+        const zipEl = document.getElementById('zip');
+        const latEl = document.getElementById('lat');
+        const lonEl = document.getElementById('lon');
+        const queryEl = document.getElementById('query');
+        const orgEl = document.getElementById('org');
+
+        if (countryEl) countryEl.textContent = 'Country: ' + data.country;
+        if (regionEl) regionEl.textContent = 'Region: ' + data.regionName;
+        if (cityEl) cityEl.textContent = 'City: ' + data.city;
+        if (zipEl) zipEl.textContent = 'Zip: ' + data.zip;
+        if (latEl) latEl.textContent = 'Latitude: ' + data.lat;
+        if (lonEl) lonEl.textContent = 'Longitude: ' + data.lon;
+        if (queryEl) queryEl.textContent = 'IP: ' + data.query;
+        if (orgEl) orgEl.textContent = 'Organization: ' + data.org;
+      }
+    })
+    .catch(error => console.log('IP data fetch error:', error));
+
+  // ===== DATE & TIME & INTERNET STATUS =====
+  function updateDateTime() {
+    const dateTimeElement = document.getElementById('mdatetime');
+    if (dateTimeElement) {
+      const now = new Date();
+      const dateStr = now.toString();
+      const status = navigator.onLine ? 'Connected' : 'Disconnected';
+      dateTimeElement.textContent = dateStr + ' | Internet Status: ' + status;
     }
+  }
+
+  updateDateTime();
+  setInterval(updateDateTime, 1000);
 }
 
-setInterval(myTimer, 1000);
-
-//========================= IP Data=====================================
-/*const http = new XMLHttpRequest()
-
-http.open("GET", "http://ip-api.com/json")
-http.send()
-
-http.onload = function() {  
-  const obj = JSON.parse(http.responseText);
- //console.log(obj)
-document.getElementById('country').innerHTML = "Country : "+obj.country
-document.getElementById('regionName').innerHTML = "RegionName  : "+obj.regionName
-document.getElementById('city').innerHTML = "City : "+obj.city
-document.getElementById('zip').innerHTML = "Zip : "+obj.zip
-document.getElementById('lat').innerHTML = "Lat : "+obj.lat
-document.getElementById('lon').innerHTML = "Lon : "+obj.lon
-document.getElementById('query').innerHTML = "IP : "+obj.query
-document.getElementById('isp').innerHTML = "Isp : "+obj.isp
-document.getElementById('org').innerHTML = "Org : "+obj.org
+// Run on DOMContentLoaded or immediately if already loaded
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initializePage);
+} else {
+  initializePage();
+}
 document.getElementById('as').innerHTML = "As : "+obj.as
 }*/
 
