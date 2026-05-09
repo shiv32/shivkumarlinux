@@ -99,8 +99,8 @@
         })
         .catch(error => console.log('IP fetch error:', error));
 
-      // Fetch detailed IP data
-      fetch('https://ipapi.co/json/')
+      // Fetch current location - completely free, no rate limit, no API key
+      fetch('https://get.geojs.io/v1/ip/geo.json')
         .then(response => response.json())
         .then(data => {
           const updateElement = (id, value) => {
@@ -108,19 +108,20 @@
             if (el) el.textContent = value;
           };
           
+          // Show all geolocation information
           updateElement('query', 'IP: ' + (data.ip || 'N/A'));
-          updateElement('country', 'Country: ' + (data.country_name || 'N/A'));
-          updateElement('regionName', 'Region: ' + (data.region || 'N/A'));
-          updateElement('city', 'City: ' + (data.city || 'N/A'));
-          updateElement('zip', 'Postal: ' + (data.postal || 'N/A'));
+          updateElement('country', 'Country: ' + (data.country || 'N/A'));
+          updateElement('regionName', 'Continent: ' + (data.continent_code || 'N/A'));
+          updateElement('city', 'Area Code: ' + (data.area_code || 'N/A'));
+          updateElement('zip', 'ASN: ' + (data.asn || 'N/A'));
           updateElement('lat', 'Latitude: ' + (data.latitude || 'N/A'));
           updateElement('lon', 'Longitude: ' + (data.longitude || 'N/A'));
-          updateElement('org', 'Organization: ' + (data.org || 'N/A'));
+          updateElement('org', 'Organization: ' + (data.organization_name || 'N/A'));
           updateElement('timezone', 'Timezone: ' + (data.timezone || 'N/A'));
-          updateElement('currency', 'Currency: ' + (data.currency_name || 'N/A') + ' (' + (data.currency || 'N/A') + ')');
-          updateElement('country_code', 'Country Code: ' + (data.country_code || 'N/A'));
+          updateElement('currency', 'Country Code: ' + (data.country_code || 'N/A'));
+          updateElement('country_code', 'Accuracy: ' + (data.accuracy || 'N/A') + 'm');
         })
-        .catch(error => console.log('IP data fetch error:', error));
+        .catch(error => console.log('Location fetch error:', error));
 
       // Update date and time
       function updateDateTime() {
