@@ -81,13 +81,13 @@ function initializePage() {
 }
 
 // Run on DOMContentLoaded or immediately if already loaded
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initializePage);
-} else {
-  initializePage();
-}
-document.getElementById('as').innerHTML = "As : "+obj.as
-}*/
+// if (document.readyState === 'loading') {
+//   document.addEventListener('DOMContentLoaded', initializePage);
+// } else {
+//   initializePage();
+// }
+// document.getElementById('as').innerHTML = "As : "+obj.as
+// }
 
 
 	//$.getJSON("//ip-api.com/json", function(obj) {
