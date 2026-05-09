@@ -36,7 +36,7 @@
       <p>Welcome to my personal website. I'm a software engineer with a master's degree from <a href="https://nith.ac.in/" target="_blank">NIT Hamirpur</a>. I'm passionate about building clean, efficient software solutions.</p>
     </section>
 
-    <!-- <section class="ip-data">
+    <section class="ip-data">
       <h2>Your IP Data</h2>
       <p id="country"></p>
       <p id="regionName"></p>
@@ -46,7 +46,7 @@
       <p id="lon"></p>
       <p id="query"></p>
       <p id="org"></p>
-    </section> -->
+    </section> 
   </main>
 
   <footer class="footer">
@@ -97,7 +97,7 @@
         .catch(error => console.log('IP fetch error:', error));
 
       // Fetch detailed IP data
-      fetch('http://ip-api.com/json')
+      fetch('https://ip-api.com/json')
         .then(response => response.json())
         .then(data => {
           if (data.status === 'success') {
