@@ -92,40 +92,40 @@ function initializePage() {
 
 	//$.getJSON("//ip-api.com/json", function(obj) {
 
-function setIpDataVisible(show) {
-  var ipTitle = document.getElementById('ipdata');
-  var ipSection = document.querySelector('.ip-block');
+// function setIpDataVisible(show) {
+//   var ipTitle = document.getElementById('ipdata');
+//   var ipSection = document.querySelector('.ip-block');
 
-  if (ipTitle) {
-    ipTitle.classList.toggle('hidden', !show);
-  }
-  if (ipSection) {
-    ipSection.classList.toggle('hidden', !show);
-  }
-}
+//   if (ipTitle) {
+//     ipTitle.classList.toggle('hidden', !show);
+//   }
+//   if (ipSection) {
+//     ipSection.classList.toggle('hidden', !show);
+//   }
+// }
 
-setIpDataVisible(false);
+//setIpDataVisible(false);
 
-$.getJSON("https://ipapi.co/json/")
-  .done(function(obj) {
-    if (obj && obj.ip) {
-      console.log(obj);
-      document.getElementById('country').innerHTML = "Country : "+obj.country_name;
-      document.getElementById('regionName').innerHTML = "RegionName  : "+obj.region;
-      document.getElementById('city').innerHTML = "City : "+obj.city;
-      document.getElementById('zip').innerHTML = "Zip : "+obj.postal;
-      document.getElementById('lat').innerHTML = "Lat : "+obj.latitude;
-      document.getElementById('lon').innerHTML = "Lon : "+obj.longitude;
-      document.getElementById('query').innerHTML = "IP : "+obj.ip;
-      document.getElementById('org').innerHTML = "Org : "+obj.org;
-      setIpDataVisible(true);
-    } else {
-      setIpDataVisible(false);
-    }
-  })
-  .fail(function() {
-    setIpDataVisible(false);
-  });
+// $.getJSON("https://ipapi.co/json/")
+//   .done(function(obj) {
+//     if (obj && obj.ip) {
+//       console.log(obj);
+//       document.getElementById('country').innerHTML = "Country : "+obj.country_name;
+//       document.getElementById('regionName').innerHTML = "RegionName  : "+obj.region;
+//       document.getElementById('city').innerHTML = "City : "+obj.city;
+//       document.getElementById('zip').innerHTML = "Zip : "+obj.postal;
+//       document.getElementById('lat').innerHTML = "Lat : "+obj.latitude;
+//       document.getElementById('lon').innerHTML = "Lon : "+obj.longitude;
+//       document.getElementById('query').innerHTML = "IP : "+obj.ip;
+//       document.getElementById('org').innerHTML = "Org : "+obj.org;
+//       setIpDataVisible(true);
+//     } else {
+//       setIpDataVisible(false);
+//     }
+//   })
+//   .fail(function() {
+//     setIpDataVisible(false);
+//   });
 //==============================================================
 
 //image based menu

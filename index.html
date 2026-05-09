@@ -38,14 +38,17 @@
 
     <section class="ip-data">
       <h2>Your IP Data</h2>
+      <p id="query"></p>
       <p id="country"></p>
       <p id="regionName"></p>
       <p id="city"></p>
       <p id="zip"></p>
       <p id="lat"></p>
       <p id="lon"></p>
-      <p id="query"></p>
       <p id="org"></p>
+      <p id="timezone"></p>
+      <p id="currency"></p>
+      <p id="country_code"></p>
     </section> 
   </main>
 
@@ -97,19 +100,25 @@
         .catch(error => console.log('IP fetch error:', error));
 
       // Fetch detailed IP data
-      fetch('https://ip-api.com/json')
+      fetch('https://ipapi.co/json/')
         .then(response => response.json())
         .then(data => {
-          if (data.status === 'success') {
-            if (document.getElementById('country')) document.getElementById('country').textContent = 'Country: ' + data.country;
-            if (document.getElementById('regionName')) document.getElementById('regionName').textContent = 'Region: ' + data.regionName;
-            if (document.getElementById('city')) document.getElementById('city').textContent = 'City: ' + data.city;
-            if (document.getElementById('zip')) document.getElementById('zip').textContent = 'Zip: ' + data.zip;
-            if (document.getElementById('lat')) document.getElementById('lat').textContent = 'Latitude: ' + data.lat;
-            if (document.getElementById('lon')) document.getElementById('lon').textContent = 'Longitude: ' + data.lon;
-            if (document.getElementById('query')) document.getElementById('query').textContent = 'IP: ' + data.query;
-            if (document.getElementById('org')) document.getElementById('org').textContent = 'Organization: ' + data.org;
-          }
+          const updateElement = (id, value) => {
+            const el = document.getElementById(id);
+            if (el) el.textContent = value;
+          };
+          
+          updateElement('query', 'IP: ' + (data.ip || 'N/A'));
+          updateElement('country', 'Country: ' + (data.country_name || 'N/A'));
+          updateElement('regionName', 'Region: ' + (data.region || 'N/A'));
+          updateElement('city', 'City: ' + (data.city || 'N/A'));
+          updateElement('zip', 'Postal: ' + (data.postal || 'N/A'));
+          updateElement('lat', 'Latitude: ' + (data.latitude || 'N/A'));
+          updateElement('lon', 'Longitude: ' + (data.longitude || 'N/A'));
+          updateElement('org', 'Organization: ' + (data.org || 'N/A'));
+          updateElement('timezone', 'Timezone: ' + (data.timezone || 'N/A'));
+          updateElement('currency', 'Currency: ' + (data.currency_name || 'N/A') + ' (' + (data.currency || 'N/A') + ')');
+          updateElement('country_code', 'Country Code: ' + (data.country_code || 'N/A'));
         })
         .catch(error => console.log('IP data fetch error:', error));
 
